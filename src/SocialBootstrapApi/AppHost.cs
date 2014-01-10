@@ -23,7 +23,6 @@ using SocialBootstrapApi.Logic;
 using SocialBootstrapApi.Models;
 using SocialBootstrapApi.ServiceInterface;
 
-
 /**
  * ServiceStack's Social Bootstrap API MVC web project based on 
  * Features:
@@ -208,7 +207,15 @@ namespace SocialBootstrapApi
             else
                 authRepo.CreateMissingTables();   //Create only the missing tables
 
-            Plugins.Add(new RequestLogsFeature());
+
+            //container.Register<ICacheClient>(new NullCacheClient());
+            container.Register<ICacheClient>(new MongoCacheClient.CacheClient(ConfigUtils.GetConnectionString("Cache"), "robertbird"));
+
+            Plugins.Add(new RequestLogsFeature() { 
+                EnableResponseTracking = true, 
+                EnableErrorTracking = true,
+                EnableSessionTracking = true,
+                RequiredRoles = new string[] { } });
         }
 
         public static void Start()

@@ -387,7 +387,7 @@
 
 @section JavaScript {    
 <script type="text/javascript">
-    App.models.login.set({ isAuthenticated: @session.IsAuthenticated.ToJsBool() });
+    App.models.login.set({ isAuthenticated: @( session == null ? "false" : session.IsAuthenticated.ToJsBool() ) });
     App.start();
 </script>
 }

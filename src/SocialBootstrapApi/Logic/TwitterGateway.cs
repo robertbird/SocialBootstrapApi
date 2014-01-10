@@ -33,12 +33,12 @@ namespace SocialBootstrapApi.Logic
 	{
 		public const int DefaultTake  = 100;
 		public const int ApiBatchSize = 100;
-		public const string UserUrl           = "http://api.twitter.com/1/users/lookup.json";
-		public const string FollowersUrl      = "http://api.twitter.com/1/followers/ids.json";
-		public const string FriendsUrl        = "http://api.twitter.com/1/friends/ids.json";
-		public const string UserTimelineUrl   = "http://api.twitter.com/1/statuses/user_timeline.json?include_entities=1&screen_name={0}";
-		public const string TweetsUrl         = "http://api.twitter.com/1/statuses/following_timeline.json?include_entities=1&screen_name={0}";
-		public const string DirectMessagesUrl = "https://api.twitter.com/1/direct_messages.json";
+		public const string UserUrl           = "http://api.twitter.com/1.1/users/lookup.json";
+		public const string FollowersUrl      = "http://api.twitter.com/1.1/followers/ids.json";
+		public const string FriendsUrl        = "http://api.twitter.com/1.1/friends/ids.json";
+		public const string UserTimelineUrl   = "http://api.twitter.com/1.1/statuses/user_timeline.json?include_entities=1&screen_name={0}";
+		public const string TweetsUrl         = "http://api.twitter.com/1.1/statuses/following_timeline.json?include_entities=1&screen_name={0}";
+		public const string DirectMessagesUrl = "https://api.twitter.com/1.1/direct_messages.json";
 
 		public TwitterAuth Auth { get; set; }
 

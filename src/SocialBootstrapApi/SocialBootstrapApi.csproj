@@ -19,11 +19,13 @@
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>4.0</OldToolsVersion>
-    <UpgradeBackupLocation />
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -116,6 +118,7 @@
     <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\SecureController.cs" />
     <Compile Include="Controllers\PublicController.cs" />
+    <Compile Include="Logic\NullCacheClient.cs" />
     <Compile Include="Models\CustomUserSession.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Logic\TwitterGateway.cs" />
@@ -240,7 +243,12 @@
     <Content Include="Views\Secure\Index.cshtml" />
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MongoCacheClient\MongoCacheClient\MongoCacheClient.csproj">
+      <Project>{915d9f04-8c22-471e-bebb-a5fecc4b4e56}</Project>
+      <Name>MongoCacheClient</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Content\css\mixins.less">
       <Generator>LessGenerator</Generator>
